@@ -1,15 +1,20 @@
-import { useCounter } from "../hooks/useCounter"
+import { useCounterContext } from "../context/CounterProvider"
 
 export const Counter = () => {
 
-  const {counter, incrementar} = useCounter()
+  const {incrementar, decrementar} = useCounterContext()
 
   return (
     <div>
       <button
         onClick={incrementar}
       >
-        clicks: {counter} 
+        Incrementar
+      </button>
+      <button
+        onClick={decrementar}
+      >
+        Decrementar
       </button>
     </div>
   ) 
